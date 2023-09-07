@@ -1,0 +1,60 @@
+﻿.mb_ModalBackground {
+    background-color: Gray;
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+    z-index: 100002;
+}
+
+.mb_MessageBoxContainer {
+    background-color: #f2f2f2;
+    border: 1px solid #C0C0C0;
+    padding: 4px;
+    position: relative;
+    
+    width: 500px;
+    z-index: 100003;
+}
+
+.mb_TitleContainer { padding: 9px 0px; }
+
+.mb_Title { font-weight: bold; }
+
+.mb_Content {
+    background-color: white;
+    border: 1px solid #C0C0C0;
+    padding: 8px;
+}
+
+.mb_MessageSection {
+    margin-bottom: 8px;
+    min-height: 50px;
+}
+
+.mb_Icon {
+    background-image: url("../Images/Icons/btnTabNext.png");
+    float: left;
+    height: 24px;
+    margin-right: 4px;
+    width: 24px;
+}
+
+.mb_MessageContainer {
+    text-align: left;
+    vertical-align: bottom;
+}
+
+.mb_MessageTextWrapper { white-space: normal; }
+
+.mb_YesNoButtonSet {
+    margin: 0 auto;
+    width: 210px;
+}
+
+.mb_OkButtonSet {
+    margin: 0 auto;
+    width: 110px;
+}
+
+.mb_ClientButton { width: 75px; }
+
+.mb_ServerButton { width: 75px; }

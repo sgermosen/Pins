@@ -1,0 +1,84 @@
+﻿/*ECG: Forgot Password Popup*/
+.wizardstep-circle{
+   width: 30px;
+   height: 30px;
+   -moz-border-radius: 70px; 
+   -webkit-border-radius: 70px; 
+   border-radius: 70px;
+   margin:0 auto;
+   padding-top:5px;
+}
+
+.wizardstep-circle-disabled{
+   width: 30px;
+   height: 30px;
+   -moz-border-radius: 70px; 
+   -webkit-border-radius: 70px; 
+   border-radius: 70px;
+   margin:0 auto;
+   padding-top:5px;
+   background-color:#999;
+}
+
+.wizardstep-header{
+    margin-top:.5em;
+    margin-bottom:.5em;
+}
+
+.wizardstep-title{
+    padding:1.5em;
+    height:auto;
+    overflow:hidden;
+}
+
+.wizardstep-label{
+    
+    font-size: 0.8rem;
+    color: #9e9e9e;
+    cursor: text;
+    font-weight: 700;
+}
+/*ECG: END Forgot Password Popup*/
+
+
+.logotype-o {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  overflow: hidden;
+  border: none;
+  font: italic normal bold 4rem/1 "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  color: #FCB040;
+  text-align: center;
+  background: #ffffff;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.25) , 1px 1px 1px rgba(0,0,0,0.2) ;
+}
+
+.logotype-w {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  overflow: hidden;
+  border: none;
+  font: italic normal bold 4rem/1 "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  color: #ffffff;
+  text-align: center;
+  background: #ffffff;
+  
+  text-shadow: 1px 2px 0 rgba(0,0,0,0.25) , 1px -1px 1px rgba(0,0,0,0.2) ;
+}
+
+
+/*sm*/
+@media(min-width:768px) and (max-width:991px) {
+    #featuredImage {
+        display:none;
+    }
+}
+
+/*xs*/
+@media(max-width:767px) {
+    #featuredImage {
+        display:none;
+    }
+}

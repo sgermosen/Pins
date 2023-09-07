@@ -1,0 +1,137 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .highlight {
+        background-color: yellow;
+    }
+</style>
+
+<form id="filterForm">
+    <input type="text" name="region" placeholder="Region" />
+    <input type="text" name="municipio" placeholder="Municipio" />
+    <input type="text" name="descripcion" placeholder="Descripcion" />
+    <input type="text" name="tipoDeProyecto" placeholder="Tipo de Proyecto" />
+    <input type="number" name="fases" placeholder="Fases" />
+    <input type="text" name="fondos" placeholder="Fondos" />
+    <button type="submit">Apply Filters</button>
+</form>
+
+<div id="map"></div>
+<table id="data">
+    <!-- Table rows will be loaded here -->
+</table>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZN5itlDLDMk-8_vq6FIbrQp1I1VfxBvk&callback=initMap" defer></script>
+
+@section Scripts {
+<script>
+    var map;
+    var markers = {};
+    var rows = {};
+
+    $(document).ready(function () {
+        $('#filterForm').on('submit', function (e) {
+            e.preventDefault();
+            loadPoints('/Home/GetFilteredPoints?' + $(this).serialize());
+        });
+   
+    });
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 18.2208, lng: -66.5901 },
+            zoom: 8
+        });
+        loadPoints('/Home/GetInitialPoints');
+    }
+     
+    function loadPoints(url) {
+        $.get(url, function (data) {
+            Object.values(markers).forEach(function (marker) {
+                marker.setMap(null);
+            });
+            markers = {};
+            rows = {};
+            $('#data').empty();
+
+            data.forEach(function (point) {
+                var color;
+                switch (point.fases) {
+                    case 0: color = 'lightblue'; break;
+                    case 1: color = 'purple'; break;
+                    case 2: color = 'darkblue'; break;
+                    case 3: color = 'orange'; break;
+                    case 4: color = 'red'; break;
+                    case 5: color = 'green'; break;
+                    default: color = 'black'; break;
+                }
+                var marker = new google.maps.Marker({
+                    position: { lat: point.latitude, lng: point.longitude },
+                    map: map,
+                    icon: {
+                        path: google.maps.SymbolPath.CIRCLE,
+                        scale: 10,
+                        fillColor: color,
+                        fillOpacity: 1,
+                        strokeColor: color,
+                        strokeOpacity: 1
+                    },
+                    title: point.descripcion
+                });
+                markers[point.id] = marker;
+                marker.addListener('click', function () {
+                    highlightRow(point.id);
+                });
+
+                var row = $('<tr></tr>');
+                row.append($('<td></td>').text(point.id));
+                row.append($('<td></td>').text(point.region));
+                row.append($('<td></td>').text(point.municipio));
+                row.append($('<td></td>').text(point.descripcion));
+                row.append($('<td></td>').text(point.tipoDeProyecto));
+                row.append($('<td></td>').text(point.fases));
+                row.append($('<td></td>').text(point.fondos));
+                // ... any other properties you want to display
+
+                rows[point.id] = row;
+                row.on('click', function () {
+                    highlightMarker(point.id);
+                });
+                $('#data').append(row);
+            });
+
+            if (data.length === 1) {
+                map.setCenter({ lat: data[0].latitude, lng: data[0].longitude });
+                map.setZoom(14);
+            } else {
+                map.setCenter({ lat: 18.2208, lng: -66.5901 });
+                map.setZoom(8);
+            }
+        });
+    }
+
+    function highlightRow(id) {
+        $('tr').removeClass('highlight'); //Remove highlight class from all rows
+        rows[id].addClass('highlight'); // Add highlight class to the clicked row
+    }
+
+    function highlightMarker(id) {
+        var marker = markers[id];
+        marker.setIcon({
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: 20, // double the size for highlighting
+            fillColor: marker.getIcon().fillColor, // keep the same color
+            fillOpacity: 1,
+            strokeColor: marker.getIcon().strokeColor, // keep the same color
+            strokeOpacity: 1
+        });
+        map.panTo(marker.getPosition()); // pan the map to the marker
+        map.setZoom(14);
+    }
+
+
+    window.onload = initMap;
+</script>
+}

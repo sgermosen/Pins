@@ -1,0 +1,1086 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    color: rgb(28, 28, 28);
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.padding-lr-5 {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+label {
+    color: rgb(146, 146, 146);
+    color: rgba(0, 0, 0, 0.38);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.font-weight-normal {
+    font-weight: 400;
+}
+
+.full-size {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    /* or overflow:auto; if you want scrollbars */
+}
+
+.padding-lr-5 {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.min-width-126 {
+    min-width: 126px !important;
+}
+
+.min-width-94 {
+    min-width: 94px !important;
+}
+
+/*ECG:For fullscreen image backgrounds*/
+
+.bg {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+}
+
+.bg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%;
+}
+
+/*ECG: END fullscreen image backgrounds*/
+
+/*ECG: Padding handling*/
+
+.no-padding-margin {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.no-padding-left-right {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.no-padding-left {
+    padding-left: 0 !important;
+}
+
+.no-padding-right {
+    padding-right: 0 !important;
+}
+
+.no-padding-top {
+    padding-top: 0 !important;
+}
+
+/*ECG: END Padding handling*/
+
+/*ECG: Alternate centering methods*/
+
+.vcenter {
+    height: 300px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -150px;
+    /* half the height of the element */
+}
+
+.login-row-vcenter {
+    height: 520px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -300px;
+    /* half the height of the element */
+}
+
+.hcenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*ECG: END Alternate centering methods*/
+
+/*ECG: Subheading en formularios*/
+
+.material-subheading {
+    padding-top: .48em;
+    padding-bottom: .48em;
+    font-weight: 600;
+}
+
+/*Estilo de fondo para loader full screen*/
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: rgba(0, 0, 0, 0.50);
+    /*ECG:Debe ser mayor a zindex de modals!*/
+    z-index: 1060;
+    /*filter: alpha(opacity=50);
+    opacity: .5;*/
+}
+
+/*ECG: Header de tablas*/
+
+table thead th, .grid-header {
+    /*color: #777;*/
+    font-weight: 400 !important;
+}
+
+/*ECG:Para labels custom, por ejemplo cuando no queremos el default animado sobre input type="text"*/
+
+.custom-textarea textarea {
+    padding-top: 0;
+}
+
+.custom-textarea span {
+    font-size: 0.8rem;
+    color: #9e9e9e;
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+/*ECG: Estilo para segundo nav con funciones por p�gina*/
+
+.functions-subnav {
+    position: fixed;
+    top: 57px;
+    width: 100%;
+    background-color: rgba(238, 238, 238, 1);
+    z-index: 700;
+    margin-bottom: 10px;
+}
+
+@media(max-width:767px) {
+    .functions-subnav {
+        top: 50px;
+    }
+}
+
+@media(min-width:768px) {
+    .functions-subnav {
+        top: 57px;
+        -webkit-transition: top .5s ease-in-out;
+        -moz-transition: top .5s ease-in-out;
+        transition: top .5s ease-in-out;
+    }
+}
+
+/*ECG: END functions nav*/
+
+/*ECG:Agrando tama�o de texto en nav principal*/
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+/*ECG: Logo en masterpage*/
+
+.logotype-o-small {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    overflow: hidden;
+    border: none;
+    font: italic normal bold 2rem/1 "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: #FCB040;
+    text-align: center;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25), 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.logotype-w-small {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    overflow: hidden;
+    border: none;
+    font: italic normal bold 2rem/1 "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.25), 1px -1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/*PJ: Remueve estilo default de boton*/
+
+.reset-button-style {
+    border: none;
+    background-color: transparent;
+}
+
+/*PJ: Vlaidation Error*/
+
+.control-validation-text {
+    position: relative;
+    /*display: inline-block;*/
+    top: -13px;
+    margin-bottom: -15px;
+    color: red;
+    font-size: 11px;
+    float: left;
+}
+
+.control-validation-select2 {
+    top: 0px;
+}
+
+.validation-text {
+    color: red;
+    font-size: 11px;
+}
+
+.validation-fail {
+    border-bottom: 1px solid red !important;
+}
+
+.display-none {
+    display: none;
+}
+
+/* PJ: El estandar para las tablas segun la guia es el header sin borde en el tope */
+
+.table>tbody>tr>th {
+    border-top: none !important;
+}
+
+.select-wrapper span.caret {
+    display: inline-block !important;
+    color: initial !important;
+    position: absolute !important;
+    right: 0px !important;
+    top: 16px !important;
+    font-size: 10px !important;
+    margin-right: 3px !important;
+    border-top: 5px solid !important;
+    border-right: 5px solid transparent !important;
+    border-left: 5px solid transparent !important;
+}
+
+label {
+    font-size: 0.9rem !important;
+}
+
+/*ECG:Estilo para boton deenfatizado*/
+
+.btn-grey {
+    color: #fff;
+    background: #9e9e9e;
+}
+
+/*ECG Estilos para texto*/
+
+/*ECG:Proveo valores rgb para browsers sin apoyo a rgba*/
+
+.text-dark-primary {
+    color: rgb(28, 28, 28);
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.text-dark-secondary {
+    color: rgb(100, 100, 100);
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.text-dark-disabled {
+    color: rgb(146, 146, 146);
+    color: rgba(0, 0, 0, 0.38);
+}
+
+.text-light-primary {
+    color: rgb(255, 255, 255);
+    color: rgba(255, 255, 255, 1);
+}
+
+.text-light-secondary {
+    color: rgb(196, 196, 196);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.text-light-disabled {
+    color: rgb(143, 143, 143);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/*ECG: END Estilos para texto*/
+
+/*ECG Estilos para iconos*/
+
+/*ECG:Proveo valores rgb para browsers sin apoyo a rgba*/
+
+.icon-dark {
+    color: rgb(100, 100, 100);
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.icon-dark-inactive {
+    color: rgb(146, 146, 146);
+    color: rgba(0, 0, 0, 0.38);
+}
+
+.icon-light {
+    color: rgb(255, 255, 255);
+    color: rgba(255, 255, 255, 1);
+}
+
+.icon-light-inactive {
+    color: rgb(143, 143, 143);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/*ECG END Estilos para iconos*/
+
+.empty-datarow td {
+    border-top: none !important;
+}
+
+/*ECG Para resolver problema con estilos de mdb con reportviewer*/
+
+.reportarea input[type=date], .reportarea input[type=datetime-local], .reportarea input[type=email], .reportarea input[type=number], .reportarea input[type=password], .reportarea input[type=search-md], .reportarea input[type=tel], .reportarea input[type=text], .reportarea input[type=time], .reportarea input[type=url], .reportarea textarea.materialize-textarea {
+    background-color: initial;
+    border: 0;
+    border-bottom: 0;
+    border-radius: 0;
+    outline: initial;
+    height: 1rem;
+    width: initial;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    transition: none;
+}
+
+.report table {
+    overflow-y: visible;
+    overflow-x: visible;
+}
+
+/*ECG END estilos reportviewer*/
+
+/* PJ: Modifica estilos de popup en tama�os XS y Custom XXS*/
+
+@media only screen and (max-width: 480px) {
+    .popover {
+        max-width: 300px !important;
+    }
+    .tooltip-inner {
+        max-width: 300px !important;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .popover {
+        max-width: 400px !important;
+    }
+    .tooltip-inner {
+        max-width: 400px !important;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .popover {
+        max-width: 500px !important;
+    }
+    .tooltip-inner {
+        max-width: 500px !important;
+    }
+}
+
+.popover-content {
+    font-size: 14px !important;
+}
+
+.tooltip>.tooltip-inner {
+    font-size: 14px !important;
+}
+
+@media only screen and (max-width: 767px) {
+    .modal {
+        padding-left: inherit !important;
+        padding-right: inherit !important;
+    }
+    .modal-dialog {
+        margin: 0;
+    }
+}
+
+.visible-custom-xxs {
+    display: none !important;
+}
+
+@media (max-width: 419px) {
+    .visible-custom-xxs {
+        display: block !important;
+    }
+}
+
+@media (max-width: 419px) {
+    .hidden-custom-xxs {
+        display: none !important;
+    }
+}
+
+.word-break-all {
+    word-break: break-all;
+}
+
+[type=checkbox]+label, [type=radio]:checked+label, [type=radio]:not(:checked)+label {
+    padding-left: 25px !important;
+}
+
+.grid-pagination {
+    padding-left: 0 !important;
+    margin: 20px 0 !important;
+    border-radius: 4px !important;
+}
+
+.grid-pagination a {
+    position: relative !important;
+    float: left;
+    padding: 6px 15px !important;
+    margin-left: -1px;
+    line-height: 1.42857143 !important;
+    color: #337ab7 !important;
+    text-decoration: none !important;
+}
+
+.grid-pagination span {
+    z-index: 2 !important;
+    color: #23527c !important;
+    background-color: #eee !important;
+    border-color: #ddd !important;
+    padding: 6px 15px !important;
+}
+
+/*ECG: Para radeditor en pantalla de manejo de caso*/
+
+.MyEditor {
+    overflow: scroll;
+    border: 2px solid #DDD;
+    padding: 5px;
+}
+
+/*ECG: Hacer popup para busuqeda de participante mas ancho*/
+
+@media all and (min-width:769px) {
+    #profileSearchModal>.modal-dialog {
+        width: 700px;
+        margin: 30px auto;
+    }
+}
+
+/*ECG:Estilo para checkbox en UC cambio de estatus*/
+
+.checkbox-text label {
+    font-size: 0.9rem;
+}
+
+/*ECG:Estilos para barra de progreso de uploads en UC attachment*/
+
+.progressbar-container {
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    display: inline-block;
+    margin: 0px 10px 0px 5px;
+    vertical-align: top;
+}
+
+.progressbar {
+    color: #fff;
+    text-align: right;
+    height: 15px;
+    width: 0;
+    background-color: #0ba1b5;
+    border-radius: 3px;
+}
+
+/*ECG:Para posicionar el control de upload en UC attachment*/
+
+.ucUploadPosition {
+    position: relative;
+    top: 15px;
+}
+
+.input-field {
+    position: relative;
+    margin-top: 1rem;
+}
+
+.input-field .caret {
+    display: block;
+}
+
+.select-label {
+    position: absolute;
+}
+
+.select-wrapperCust {
+    position: relative;
+}
+
+.select-wrapperCust input.select-dropdownCust {
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    /*border-bottom: 1px solid #9e9e9e;*/
+    outline: none;
+    height: 3rem;
+    line-height: 3rem;
+    width: 100%;
+    font-size: 1rem;
+    margin: 0 0 15px 0;
+    padding: 0;
+    display: block;
+}
+
+.select-wrapperCust span.caret {
+    /*display: none;*/
+    color: initial;
+    position: absolute;
+    right: 0;
+    top: 16px;
+    font-size: 10px;
+}
+
+.select-wrapperCust span.caret.disabled {
+    color: rgba(0, 0, 0, 0.26);
+}
+
+.select-wrapperCust+label {
+    position: absolute;
+    top: -14px;
+    font-size: 0.8rem;
+}
+
+.select-wrapperCust input.select-dropdownCust:disabled {
+    color: rgba(0, 0, 0, 0.3);
+    cursor: default;
+    -webkit-user-select: none;
+    /* webkit (safari, chrome) browsers */
+    -moz-user-select: none;
+    /* mozilla browsers */
+    -ms-user-select: none;
+    /* IE10+ */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.select-wrapperCust i {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.select-dropdownCust li.disabled {
+    color: rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+}
+
+.panel-border {
+    border-radius: 15px;
+}
+
+.bg-info {
+    background-color: #eaeaea;
+}
+
+.RadGridSelectedRow {
+    background-color: rgb(234, 234, 234) !important;
+}
+
+.text-primary {
+    color: rgb(45, 171, 125);
+}
+
+.grid-buttonColor1 {
+    color: rgb(44, 130, 201);
+}
+
+.grid-buttonColor2 {
+    color: rgb(252, 96, 66);
+}
+
+.grid-buttonColor3 {
+    color: rgb(192, 192, 192);
+}
+
+.grid-buttonColor4 {
+    color: rgb(255, 192, 0);
+}
+
+.switch label input[type=checkbox]:checked+.lever {
+    background-color: #4285F4;
+}
+
+.arrow-down {
+    float: right;
+    color: black;
+    margin-right: 2.5%;
+    cursor: pointer;
+}
+
+.animate-arrow-up {
+    transform: rotate(180deg)
+}
+
+.animate-arrow-down {
+    transform: rotate(360deg)
+}
+
+.card-panel-header-menu {
+    transition: box-shadow .25s;
+    padding-left: 20px;
+    margin: 0.5rem 0 1rem 0;
+    border-radius: 15px;
+    background-color: rgb(45, 171, 125);
+    height: 55px;
+}
+
+.card-panel-header-titlefunction {
+    transition: box-shadow .25s;
+    /*padding-top: 10px;*/
+    padding-left: 20px;
+    margin: 0.5rem 0 1rem 0;
+    border-radius: 15px;
+    background-color: rgb(252, 96, 66);
+    height: 55px;
+}
+
+.header-page-title-text {
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 20px;
+    padding-top: 13px;
+}
+
+.header-functions-text {
+    color: rgb(255, 255, 255);
+    /*font-weight:600;*/
+    font-size: 16px;
+    padding-top: 8px;
+}
+
+.bg-primaryH {
+    color: #fff;
+    background-color: rgb(44, 130, 201);
+}
+
+.label-required {
+    color: rgb(44, 130, 201);
+}
+
+.control-sublabel-text {
+    position: relative;
+    /*display: inline-block;*/
+    top: 10px;
+    margin-bottom: -15px;
+    color: rgb(89, 89, 89);
+    font-size: 11px;
+    float: left;
+    font-family: Roboto, sans-serif;
+}
+
+.RadInput_Material {
+    padding-top: 10px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.RadInput .riTextBox {
+    font-size: 14px !important;
+}
+
+.caret-right {
+    border-bottom: 4px solid transparent;
+    border-top: 4px solid transparent;
+    border-left: 4px solid;
+    display: inline-block;
+    height: 0;
+    /*opacity: 0.3;*/
+    vertical-align: middle;
+    width: 0;
+    margin-left: 2px;
+}
+
+.fileNameStyle {
+    text-overflow: ellipsis;
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/*test*/
+
+.RadUpload input.ruFakeInput {
+    display: none;
+}
+
+.ajax__combobox_buttoncontainer button {
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50px !important;
+    width: 15px;
+    background-color: white;
+    border: none;
+    border-bottom-width: 1px !important;
+    border-bottom-style: solid !important;
+    border-bottom-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.ajax__combobox_buttoncontainer button:disabled {
+    border-bottom-color: ButtonFace !important;
+}
+
+.ajax__combobox_inputcontainer {
+    border-spacing: 0 !important;
+    top: 0px !important;
+}
+
+.ajax__combobox_itemlist {
+    background-color: #fff !important;
+    margin: 0 !important;
+    min-width: 100px !important;
+    max-height: 650px !important;
+    overflow-y: auto !important;
+    position: absolute !important;
+    will-change: width, height !important;
+    border: none !important;
+}
+
+.ajax__combobox_itemlist li {
+    font-size: 1.2rem !important;
+    color: #4285F4 !important;
+    display: block !important;
+    padding: 1rem !important;
+}
+
+.ajax__combobox_itemlist li.active, .ajax__combobox_itemlist li:hover, .ajax__combobox_itemlist li.active, .ajax__combobox_itemlist li:hover {
+    background-color: #eee !important;
+}
+
+.ajax__combobox_itemlist {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12) !important;
+}
+
+.ajax__combobox_itemlist li {
+    clear: both !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    text-align: left !important;
+    text-transform: none !important;
+}
+
+.ajax__combobox_itemlist li {
+    line-height: 1.5rem !important;
+}
+
+.sub-title {
+    color: #756f6f
+}
+
+::-ms-clear {
+    display: none;
+}
+
+.dropdown-toggle .caret-right {
+    margin-left: 5px;
+}
+
+.select-wrapper .select-dropdown {
+    text-overflow: ellipsis;
+    width: 94% !important;
+    padding-right: 16px !important;
+}
+
+/*Start Select 2 Styling*/
+
+.ddlSelect2 {
+    display: block !important;
+    clear: both;
+}
+
+.select2-container {
+    width: 100% !important;
+}
+
+.select2-selection {
+    height: 44px !important;
+    border-bottom: 1px solid #9e9e9e !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-radius: 0 !important;
+}
+
+.select2-selection__rendered {
+    padding-top: 7px;
+}
+
+.select2-selection__arrow {
+    margin-top: 5px;
+}
+
+.select2-dropdown {
+    max-height: 650px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+    font-size: 1.2rem;
+    color: #4285F4;
+    display: block;
+    padding: 1rem;
+    padding: 0;
+}
+
+.select2-results__option:hover, .select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #ddd !important;
+    color: #4285F4;
+}
+
+.select2-search .select2-search__field {
+    margin-top: 5px !important;
+}
+
+.select2-selection.select2-selection--multiple {
+    min-height: 46px;
+    max-height: 92px;
+    height: auto !important;
+    overflow-y: auto;
+}
+
+.select2-container--default.select2-container--disabled .select2-selection--multiple, .select2-container--default.select2-container--disabled .select2-selection--single {
+    background-color: #fff;
+    cursor: default;
+}
+
+.select2-container--default.select2-container--disabled .select2-selection--multiple .select2-selection__rendered .select2-selection__clear, .select2-container--default.select2-container--disabled .select2-selection--single .select2-selection__rendered .select2-selection__clear {
+    display: none;
+}
+
+.select2-container--default.select2-container--disabled .select2-selection--single .select2-selection__rendered {
+    color: #9e9e9e;
+}
+
+.select2-container--default.select2-container--disabled .select2-selection--multiple .select2-selection__rendered .select2-selection__choice {
+    color: #9e9e9e;
+    background-color: #f5f4f4;
+}
+
+/*End Select 2 Styling*/
+
+.dtop-overlay {
+    position: fixed;
+    /* Sit on top of the page content */
+    display: none;
+    /* Hidden by default */
+    width: 100%;
+    /* Full width (cover the whole page) */
+    height: 100%;
+    /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black background with opacity */
+    z-index: 2;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    /* Add a pointer on hover */
+}
+
+/* Modal lg bootstrap */
+
+.modal-lg .card-panel {
+    box-shadow: none !important;
+}
+
+.modal-lg .modal-content {
+    border-radius: 15px;
+}
+
+/* Modal md bootstrap */
+
+.modal-md .card-panel {
+    box-shadow: none !important;
+}
+
+.modal-md .modal-content {
+    border-radius: 15px;
+}
+
+/* Fixed row empty telerik */
+
+.fixed-row .rgRow {
+    display: none !important;
+}
+
+.fixed-row .rgAltRow {
+    display: none !important;
+}
+
+.select2-container--default.select2-container--disabled .select2-selection__arrow {
+    visibility: hidden !important;
+}
+
+/* Style for custom validation attachment */
+
+span.cvFileUpload {
+    padding-top: 58px;
+    margin-bottom: 20px;
+}
+
+/* buttons */
+
+.btn-small {
+    line-height: 30px;
+    position: relative;
+    padding: 2px 13px;
+    border: 0;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    /* text-transform: uppercase; */
+    text-decoration: none;
+    outline: none !important;
+    -webkit-transition: 0.2s ease-out;
+    -moz-transition: 0.2s ease-out;
+    -o-transition: 0.2s ease-out;
+    -ms-transition: 0.2s ease-out;
+    transition: 0.2s ease-out;
+}
+
+/* Style timepicker */
+
+.btn-flat {
+    padding: 0 !important;
+}
+
+.btn-floating.btn-flat:active {
+    background-color: #4285F4 !important;
+}
+
+.btn-floating.btn-flat.active {
+    background-color: #4285F4 !important;
+}
+
+.btn-floating {
+    background-color: rgba(66, 133, 244, 0.25) !important;
+}
+
+.rgba-teal-light {
+    background-color: rgba(66, 133, 244, 0.3) !important;
+}
+
+.rgba-teal-strong {
+    background-color: rgba(66, 133, 244, 0.7) !important;
+}
+
+.rgba-teal-slight {
+    background-color: rgba(66, 133, 244, 0.1) !important;
+}
+
+.hm-teal-light .mask {
+    background-color: rgba(66, 133, 244, 0.3) !important;
+}
+
+.hm-teal-strong .mask {
+    background-color: rgba(66, 133, 244, 0.7) !important;
+}
+
+.hm-teal-slight .mask {
+    background-color: rgba(66, 133, 244, 0.1) !important;
+}
+
+.waves-effect.waves-teal .waves-ripple {
+    background-color: rgba(66, 133, 244, 0.7) !important;
+}
+
+.clockpicker-tick {
+    background-color: rgba(66, 133, 244, 0) !important;
+}
+
+.clockpicker-tick.active, .clockpicker-tick:hover {
+    background-color: rgba(66, 133, 244, 0.25) !important;
+}
+
+.clockpicker-canvas-bg {
+    fill: rgba(66, 133, 244, 0.25) !important;
+}
+
+.clockpicker-canvas-bg-trans {
+    fill: rgba(66, 133, 244, 0.25) !important;
+}
+
+.clockpicker-canvas line {
+    stroke: rgba(66, 133, 244, 0.25) !important;
+}
+
+.btn-floating.btn-flat:active {
+    background-color: rgba(66, 133, 244, 0.5) !important;
+}
+
+.picker__footer .clockpicker-button:active {
+    background-color: rgba(66, 133, 244, 0.25) !important;
+}
+
+/* Readonly Inputs */
+
+input[type=text]:disabled {
+    cursor: default;
+    color: #9e9e9e !important;
+    border-bottom: 1px solid #9e9e9e !important;
+}
+
+input[type=text][readonly="readonly"], textarea.materialize-textarea[readonly="readonly"] {
+    cursor: default;
+    color: #9e9e9e !important;
+    border-bottom: 1px solid #9e9e9e !important;
+}
+
+/* word-wrap */
+
+/*.RadGridCustomWrap.RadGrid_Material .rgRow>td, .RadGridCustomWrap.RadGrid_Material .rgAltRow>td, .RadGridCustomWrap.RadGrid_Material .rgEditRow>td {
+    word-break: break-all;
+}*/
+
+/* fix size for textarea-material */
+
+textarea {
+    padding: 0 !important;
+}

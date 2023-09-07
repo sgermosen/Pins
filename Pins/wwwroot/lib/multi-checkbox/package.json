@@ -1,0 +1,35 @@
+{
+  "name": "multi-checkbox",
+  "version": "0.1.11",
+  "description": "A vanilla javascript multi-checkbox dropdown web component.",
+  "type": "module",
+  "main": "multi-checkbox.js",
+  "module": "multi-checkbox.js",
+  "files": [
+    "AUTHORS.md",
+    "CHANGES.md",
+    "custom-elements.json",
+    "LICENSE",
+    "multi-checkbox.css",
+    "multi-checkbox.js",
+    "package.json",
+    "README.md"
+  ],
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smontanus/multi-checkbox.git"
+  },
+  "author": "Stephen Montanus steve@stevemontanus.com",
+  "license": "MIT",
+  "keywords": [
+    "web component",
+    "custom element",
+    "multiple checkbox",
+    "select"
+  ],
+  "bugs": {
+    "url": "https://github.com/smontanus/multi-checkbox/issues"
+  },
+  "homepage": "https://github.com/smontanus/multi-checkbox#readme"
+}

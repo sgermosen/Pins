@@ -1,0 +1,606 @@
+﻿
+
+/* MASTER PAGE
+---------------------------------- */
+
+.MasterContainer {
+    background-image: url('../Images/MasterPage/BG.jpg');
+    height: auto;
+    margin: 0 auto;
+    min-height: 100%;
+    padding: 0px;
+    width: 1028px;
+}
+
+.MasterLeftColumnContainer {
+    border-right: 2px solid #cccdc8;
+    float: left;
+    height: 100%;
+    width: 203px;
+}
+
+.MasterLeftColumnContent {
+    float: left;
+    height: 100%;
+    padding-left: 7px;
+    width: 196px;
+}
+
+.MasterLogo {
+    background-image: url('../Images/MasterPage/logo.png');
+    background-repeat: no-repeat;
+    height: 170px;
+    margin-left: 15px;
+    width: 196px;
+}
+
+.MasterSubLogo {
+    background-image: url('../Images/MasterPage/intelligent_interaction.gif');
+    background-repeat: no-repeat;
+    height: 76px;
+    width: 196px;
+}
+
+.MasterSeparator {
+    background-color: crimson;
+    float: left;
+    height: 4px;
+    margin: 0px;
+    /*margin-left: 203px;*/
+    padding: 0px;
+    width: 794px;
+}
+
+.MasterTopHeaderContainer {
+    background-color: white;
+    float: left;
+    height: 20px;
+    margin: 0px;
+    /*margin-left: 203px;*/
+    padding: 3px 0px;
+    width: 794px;
+}
+
+.MasterTopHeaderContent {
+    float: right;
+    height: 20px;
+    padding: 0px 3px 0px 5px;
+    width: 789px;
+}
+
+
+.MasterSubHeaderContent {
+    background-color: white;
+    float: left;
+    height: 69px;
+    width: 635px;
+}
+
+.MasterSubHeaderTitle {
+    background-color: #EEEEEE;
+    border-bottom: 2px solid #CCCCCC;
+    clear: both;
+    color: #3882a5;
+    font-size: 16pt;
+    font-weight: bold;
+    height: 33px;
+    padding-left: 5px;
+    width: 100%;
+}
+
+
+.MasterSubHeaderFunctions {
+    background-color: white;
+    clear: both;
+    height: 34px;
+    width: 100%;
+}
+
+.MasterHomeSearch {
+    background-color: white;
+    float: left;
+    height: 69px;
+    width: 159px;
+}
+
+.MasterMainContentContainer {
+    
+    margin-left: 205px;
+    padding-top: 103px;
+    /*float:left;*/
+    width: 800px;
+}
+
+.TimePicker {
+    border: none;
+    height: 15px;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* LOG IN */
+
+.MiddleCenter {
+    background-color: #eeeeee;
+    border: 1px solid Silver;
+    height: 370px;
+    left: 50%;
+    margin-left: -475px;
+    margin-top: -185px;
+    position: absolute;
+    top: 50%;
+    width: 950px;
+}
+
+.LogInButton {
+    background: #BC2140;
+    border: 1px solid #BC2140;
+    border-radius: 5px;
+    color: white;
+    padding: 6px;
+}
+
+.Row {
+    clear: both;
+    padding: 3px;
+    width: 100%;
+}
+
+
+
+.GraySectionTitle {
+    background-color: #d4d4d4;
+    color: #3882a5;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    padding: 5px 0px 5px 6px;
+}
+
+.OrangeSectionTitle {
+    background-color: #feaa06;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 6px;
+    padding: 5px 0px 5px 6px;
+}
+
+.LoginTextBox {
+    border: 1px solid #ccc;
+    padding: 4px;
+}
+
+/*ECG:Nueva implementacion de tooltips
+.ToolTip
+{
+    border: 2px solid #393939;
+    background-color: #FFFFFF;
+    color: #666666;
+    padding: 8px;
+    display: block;
+    position: absolute;
+    margin-top: 10px;
+    z-index: 9999999999;
+    font-weight: 600;
+}
+*/
+
+div#tipDiv {
+    background-color: #FFFFFF;
+    border: 2px solid #393939;
+    color: #666666;
+    display: block;
+    font-weight: 600;
+    margin-top: 10px;
+    padding: 8px;
+    position: absolute;
+    z-index: 11000;
+}
+
+.dvwDataGrid {
+    background-color: #ffffff;
+    padding: 0px;
+    width: 100%;
+}
+
+.busyLabel { display: none; }
+
+.common_table { border: 1px solid #D9D9D9; }
+
+.formLineMargin { margin: 2px; }
+
+.failureNotification {
+    color: Red;
+    font-size: 1.2em;
+}
+
+/* Forms*/
+
+.formControl { width: 200px; }
+
+.formLine {
+    clear: both;
+    padding: 5px;
+    width: 100%;
+}
+
+.dropdown { width: 206px; }
+
+.controlLabel {
+    float: left;
+    margin-left: 5px;
+    width: 100px;
+    /*font-weight: 600;*/
+}
+
+.controlContainer {
+    float: left;
+    width: 210px;
+}
+
+.main_table { width: 100%; }
+
+.MoneyTextBox { text-align: right; }
+
+/*Background
+---------------------------------------------------------*/
+
+.modalBackground {
+    background-color: Gray;
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+}
+
+
+/*Pop up
+---------------------------------------------------------*/
+
+.modalPopup {
+    background-color: white;
+    clear: both;
+    padding: 5px;
+}
+
+.modalPopupContainer {
+    background-color: #f3f3f3;
+    clear: both;
+    width: 100%;
+}
+
+/* GRIDS
+----------------------------------------------------------*/
+
+.SortedAscendingCellStyle { background-color: #F7F7F7; }
+
+.SortedAscendingHeaderStyle { background-color: #487575; }
+
+.SortedDescendingCellStyle { background-color: #E5E5E5; }
+
+.SortedDescendingHeaderStyle { background-color: #275353; }
+
+.EditRowStyle { background-color: #7C6F57; }
+
+.PagerStyle {
+    background-color: #E9E9E9;
+    border-right: thin solid #FFFFFF;
+    color: Black;
+    font-family: Helvetica Neue;
+    font-size: small;
+}
+
+.GridPannel {
+    border-color: #B2B2B2;
+    border-style: none;
+    border-width: thin;
+    max-height: 350px;
+    overflow: auto;
+}
+
+.GridViewStyle {
+    background-color: White;
+    border: thin solid #E9E9E9;
+    color: #333333;
+    font-family: Arial, "Helvetica Neue";
+    font-size: 0.85em;
+    padding: 4px;
+    width: 100%; /*GridLines="None"*/
+}
+
+.GridView {
+    background-color: #ffffff;
+    padding: 0px;
+    width: 100%;
+}
+
+.GridView th {
+    background-color: #E7E7E7;
+    background-image: url("../Images/MasterPage/GridHeaderGradient.png");
+    background-repeat: repeat-x;
+    border: 1px solid #BCBCBC;
+    color: #000000;
+    font-weight: 600;
+    padding: 5px;
+}
+
+.GridView td {
+    border: 1px solid #BCBCBC;
+    padding: 5px;
+}
+
+.GridViewRow { 
+    background-color: #FFFFFF;
+}
+
+.GridViewRowAttachment {
+     background-color: #FFFFFF; 
+     word-break: break-all;
+}
+
+.GridCellWrap {
+    word-break: normal;
+}
+
+.GridViewAlternateRow { 
+    background-color: #f2f2f2; 
+}
+
+.GridViewAlternateRowAttachment {
+     background-color: #f2f2f2; 
+    /*word-break: break-all;*/
+}
+
+.AlternatingRowStyle {
+    /*background-color:#E2E2E2;
+    border-bottom-style:none;
+    border-top-style:none;    
+    border-left-style:solid;
+    border-color:#B2B2B2;*/
+}
+
+.RowStyle {
+    /*border-bottom-style:none;
+    border-top-style:none;
+    border-left-style:solid;
+    border-color:#B2B2B2;
+    */
+}
+
+.FooterStyle {
+    background-color: #1C5E55;
+    color: Black;
+    font-weight: bold;
+}
+
+.SelectedRowStyle {
+    background-color: #C5BBAF;
+    color: #333333;
+}
+
+.sidebar_header {
+    background-color: #F2F2F2;
+    border-bottom: 1px solid #D9D9D9;
+    border-spacing: 2px;
+    font-family: Arial;
+    font-size: x-small;
+    font-weight: bold;
+}
+
+.sidebar_header_font {
+    font-family: Arial;
+    font-size: x-small;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: top;
+}
+
+.sidebar_row {
+    background-color: #F2F2F2;
+    font-family: Arial;
+    font-size: x-small;
+    font-weight: normal;
+}
+
+.sidebar_row_button {
+    background-color: White;
+    border-bottom: 1px solid #D9D9D9;
+    border-top: 1px solid #D9D9D9;
+    font-family: Arial;
+    font-size: x-small;
+    font-weight: normal;
+    text-align: left;
+}
+
+.sidebar_row_msg {
+    background-color: White;
+    color: #FF0000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-small;
+}
+
+.sidebar_row_white {
+    background-color: White;
+    font-family: Arial;
+    font-size: x-small;
+    font-weight: normal;
+    text-align: left;
+}
+
+.sidebar_row_white_text { margin-left: 0px; }
+
+/* Searchbox criteria items */
+
+.searchControl { width: 160px; }
+
+.searchTopControl { margin-bottom: 3px; }
+
+.sidebar_table {
+    border-bottom: 1px solid #D9D9D9;
+    border-left: 1px solid #D9D9D9;
+    border-right: 1px solid #D9D9D9;
+    border-spacing: 2px;
+    border-top: 1px solid #D9D9D9;
+    empty-cells: hide;
+    width: 200px;
+}
+
+.style2 {
+    border-bottom: 1px solid #D9D9D9;
+    color: #0046D5;
+    font-family: Arial;
+    font-size: 12pt;
+    font-weight: bold;
+    /*width: 628px;*/
+}
+
+.style20 {
+    height: 24px;
+    width: 12px;
+}
+
+.style21 {
+    height: 24px;
+    width: 80px;
+}
+
+.style5 {
+    color: #5880b3;
+    font-family: Arial;
+    font-size: 12pt;
+    font-weight: bold;
+    /*border-bottom: 1px solid #D9D9D9;
+            width: 585px;*/
+}
+
+.style6 {
+    color: #3c72df;
+    font-family: Arial;
+    font-size: 12pt;
+    font-weight: normal;
+}
+
+.style6line {
+    border-top: 1px solid #D9D9D9;
+    height: 50%;
+    vertical-align: bottom;
+}
+
+.styleMainTitle {
+    border-bottom: 1px solid #D9D9D9;
+    color: #0046D5;
+    font-family: Arial;
+    font-size: 14pt;
+    font-weight: bold;
+    /*width: 585px;*/
+}
+
+.textbox { width: 200px; }
+
+.valdationError { color: Red; }
+
+tr.HeaderStyle th {
+    background: url('../Images/grd_alt.png') repeat-x;
+    background-color: #f0f0f0;
+    /*border-right: thin solid #E9E9E9;*/
+    /*border-bottom: thin solid #E9E9E9;*/
+    border: 1px solid #d1d1d1;
+    color: Black;
+    font-weight: bold;
+    padding: 5px 0px 5px 5px;
+    text-align: left; /*HorizontalAlign:Left;*/
+    /*border-right-color: #E9E9E9;
+    border-bottom-color: #E9E9E9;*/
+}
+
+.infoTableText { width: 187px; }
+
+.leftLine {
+    background-image: url('../Images/leftBar.jpg');
+    background-repeat: repeat-y;
+}
+
+.main_section_content {
+    color: #000000;
+    font-family: Arial;
+    font-size: 10pt;
+    font-weight: bold;
+    text-align: left;
+    text-indent: 10px;
+}
+
+/*En Proceso
+----------------------------------------------------------*/
+
+#progress_overlay {
+    background: Gray;
+    filter: alpha(opacity=60);
+    height: 100%;
+    left: 0px;
+    opacity: 0.6;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 20000;
+}
+
+#progress_container {
+    background: transparent;
+    height: 100%;
+    left: 0px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 20001;
+}
+
+#progress_inner {
+    background: #FFFFFF;
+    color: #b6581b;
+    display: block;
+    font-size: large;
+    height: 72px;
+    margin: 25% auto 0 auto;
+    text-align: center;
+    top: inherit;
+    width: 226px;
+    z-index: 20002;
+}
+
+.FunctionButtonsContainer { margin: 3px 0px 3px 0px; }
+
+.FunctionButtonsContainer input { margin: 3px; }
+
+/*GUIA DE USO*/
+.RectDivisor{
+	/*height: 106px;*/
+	border-right: 6px solid #ff9934;
+}
+
+.RectRInfo{
+	padding: 2px 10px 0px;   
+}
+
+.RectAll{
+	padding-bottom: 20px;
+}
+
+.reqDocumentUpload .ruUploadProgress
+{
+    visibility:hidden !important;
+    display: none !important;
+}
+
+.reqDocumentUpload .ruInputs li {
+    float:left;
+}
+
+.reqDocumentUpload li .ruUploading {
+    display: none !important;
+}
+
+
+
+
+

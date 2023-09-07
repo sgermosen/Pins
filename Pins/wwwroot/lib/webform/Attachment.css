@@ -1,0 +1,25 @@
+﻿.RadUpload .ruUploadProgress {
+    /*width: 210px;
+    vertical-align: top;*/
+    word-break: break-all !important;
+    max-height: 40px !important;
+    overflow: hidden !important;
+}
+
+
+.RadUpload .ruInputs {
+    position: static !important;
+}
+
+
+.RadUpload .ruFileWrap {
+    display: inline !important;
+    white-space: normal !important;
+}
+
+.RadUpload input.ruFileInput {
+    font: 0px !important;
+    height: 100%;
+    width: 100%;
+    right: auto;
+}

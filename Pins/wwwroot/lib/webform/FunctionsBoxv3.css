@@ -1,0 +1,15 @@
+﻿.function-link{
+    padding:8px 10px;
+}
+
+.function-link i{
+    font-size:24px;
+    vertical-align:middle;
+    color: rgb(255, 255, 255);
+}
+
+.function-link span.function-text{
+    vertical-align:middle;
+    color: rgb(255, 255, 255);
+    font-weight:400;
+}

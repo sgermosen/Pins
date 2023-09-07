@@ -1,0 +1,70 @@
+﻿html,body{ margin:0; padding:0; height:100%; width:100%; }
+.full-size{
+  height:100%;
+  width:100%;
+  overflow:hidden; /* or overflow:auto; if you want scrollbars */
+}
+
+
+
+
+.fullscreen{
+  height:100%;
+  width:100%;
+}
+
+.vcenter {
+  height: 300px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -150px; /* half the height of the element */
+}
+
+.hcenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bg {
+  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+}
+.bg img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+}
+
+.navbar-nav > li > a {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+.navbar .navbar-brand{
+    height:0;
+}
+
+.navbar-brand{
+    height:0;
+    padding: 0px 0px;
+}
+navbar-header {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+
+
+
+

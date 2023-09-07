@@ -1,0 +1,533 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .highlight {
+        background-color: yellow !important;
+    }
+
+     
+    #map {
+        height: 450px;
+    }
+
+    .bs-actionsbox .btn {
+        white-space: normal !important;
+        width: 100% !important;
+    }
+
+    .actions-btn.bs-select-all,
+    .actions-btn.bs-deselect-all {
+        white-space: normal;
+        text-align: left;
+    }
+
+    select.form-control.custom-select { 
+        border: none !important;
+        outline: none !important;
+        border-bottom: 1px solid #000 !important;
+        scroll-behavior: smooth !important;
+    }
+
+    .padding-zero {
+        padding: 0 !important;
+    }
+
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css">
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form id="filterForm">
+            <div class="row">
+                <div col-md-12>
+                    <div class="col-md-4">
+                        <label for="regionSelect">Región</label>
+                        <select name="regionId" id="regionSelect"
+                                multiple title="Seleccione" class="form-control custom-select">
+                            <option value="1">Aguadilla</option>
+                            <option value="2">Arecibo</option> 
+                            <option value="5">Guayama</option>
+                            <option value="4">Humacao</option>
+                            <option value="7">Mayagüez</option>
+                            <option value="6">Ponce</option> 
+                            <option value="3">San Juan</option>
+                        </select> 
+                    </div>
+                    <div class="col-md-4">
+                        <label for="municipioSelect">Municipio</label>
+                        <select class="form-control" name="municipioId" id="municipioSelect"
+                                multiple title="Seleccione">
+                            <option value="18">Adjuntas</option>
+                            <option value="1">Aguadilla</option>
+                            <option value="4">Arecibo</option>
+                            <option value="7">Bayamón</option>
+                            <option value="14">Caguas</option>
+                            <option value="10">Carolina</option> 
+                            <option value="15">Cayey</option>
+                            <option value="5">Ciales</option>
+                            <option value="16">Cidra</option>
+                            <option value="12">Fajardo</option>
+                            <option value="13">Juncos</option> 
+                            <option value="23">Lajas</option>
+                            <option value="3">Lares</option>
+                            <option value="2">Moca</option>
+                            <option value="6">Naranjito</option>
+                            <option value="19">Ponce</option> 
+                            <option value="17">Salinas</option>
+                            <option value="8">San Juan</option>
+                            <option value="21">San Germán</option> 
+                            <option value="9">Trujillo Alto</option> 
+                            <option value="11">Vieques</option>
+                            <option value="20">Villalba</option> 
+                            <option value="22">Yauco</option> 
+                        </select>  
+                    </div>
+                    <div class="col-md-4">
+                        <label for="tipoDeProyectoSelect">Proyecto</label>
+
+                        <select class="form-control" name="tipoDeProyectoId"
+                                id="tipoDeProyectoSelect" multiple title="Seleccione">
+                            <option value="3">Acueductos</option>
+                            <option value="1">Alcantarillado Sanitario</option>
+                            <option value="2">Generadores</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div col-md-12>
+                    <div class="col-md-4">
+                        <label for="faseId">Fase</label>
+                        <select class="form-control" name="faseId" id="faseSelect"
+                                multiple title="Seleccione">
+                            <option value="5">Construcción</option>
+                            <option value="3">Diseño</option>
+                            <option value="6">Finalizado</option>
+                            <option value="2">Planificación</option>
+                            <option value="1">Pre-calificación</option>
+                            <option value="4">Subasta</option>
+                        </select>
+
+                    </div>
+                    <div class="col-md-4">
+                        <label for="fondoId">Fondo</label>
+
+                        <select class="form-control" name="fondoId" id="fondoSelect"
+                                multiple title="Seleccione">
+                            <option value="2">AAA</option>
+                            <option value="4">CDBGDR</option>
+                            <option value="1">CWSRF</option>
+                            <option value="5">CWSRF,AAA</option> 
+                            <option value="3">FEMA</option> 
+                            <option value="6">FEMA,CDBGDR,AAA</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="textDescription">Descripción</label>
+                        <input class="form-control" type="text" id="textDescription" name="descripcion" placeholder="Digite una Descripción" />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12" style="text-align:right">
+                    <button type="button" class="btn btn-primary" id="btnclear" onclick="clearFilters()">Limpiar Filtros</button>
+                </div>
+            </div> 
+        </form>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div id="summary">
+            <div class="col-md-12">
+                <div class="col-md-8" style="font-size:xx-small;padding-right:0px;padding-left: 0px;">
+                    <div class="col-md-2 padding-zero">
+                        <span style="display: inline-block; width: 12px; height: 12px; background-color: blue; margin-right: 1px;"></span>
+                        0-Pre-Planificación
+                    </div>
+                    <div class="col-md-2 padding-zero">
+                        <span style="display: inline-block; width: 12px; height: 12px; background-color: purple; margin-right: 1px;"></span>
+                        1-Planificación
+                    </div>
+                    <div class="col-md-2 padding-zero">
+                        <span style="display: inline-block; width: 12px; height: 12px; background-color: darkblue; margin-right: 1px;"></span>
+                        2-Diseño
+                    </div>
+                    <div class="col-md-2 padding-zero">
+                        <span style="display: inline-block; width: 12px; height: 12px; background-color: orange; margin-right: 1px;"></span>
+                        3-Subasta
+                    </div>
+                    <div class="col-md-2 padding-zero">
+                        <span style="display: inline-block; width: 12px; height: 12px; background-color: red; margin-right: 1px;"></span>
+                        4-Construcción
+                    </div>
+                    <div class="col-md-2 padding-zero">
+                        <span style="display: inline-block; width: 12px; height: 12px; background-color: green; margin-right: 1px;"></span>
+                        5-Finalizado
+                    </div>
+                </div>
+                <div class="col-md-4" style="text-align:right;padding-right:0px;padding-left: 0px;">
+                    <div class="col-md-4">
+                        <div id="municipiosCount"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="proyectosCount"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="totalAmount"></div>
+                    </div>
+                </div>
+                <div class="col-md-8" style="font-size:xx-small;padding-right:0px;padding-left: 0px;"></div>
+                <div class="col-md-4" style="text-align:right;padding-right:0px;padding-left: 0px;">
+                    <div class="col-md-4">
+                        Localidades
+                    </div>
+                    <div class="col-md-4">
+                        Proyectos
+                    </div>
+                    <div class="col-md-4">
+                        Monto Total
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div id="map">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <table id="data" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Video</th>
+                        <th>Región</th>
+                        <th>Municipio</th>
+                        <th>Descripción</th>
+                        <th>Tipo De Proyecto</th>
+                        <th>Fase</th>
+                        <th>Fondo</th>
+                        <th>Costo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOURPROTECTEDMAPKEYSHERE&callback=initMap" defer></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+
+<link href="~/lib/webform/style.css" rel="stylesheet" />
+
+
+<script>
+    var map;
+    var markers = {};
+    var rows = {};
+    var infoWindow;
+
+    $(document).ready(function () {
+        $('select').selectpicker({
+            actionsBox: true,
+            liveSearch: true,
+        });
+        $('#data').DataTable({
+            pageLength: 10,
+        }); 
+        $('#data').on('click', 'tr', function () {
+            var pointId = $(this).attr('id');
+            var point = pointsData.find(p => p.id === pointId); 
+            highlightMarker(point.id);
+            showInfoWindow(point);
+        });
+
+        $(".bs-select-all").text("Seleccionar Todos");
+        $(".bs-select-all").on("click", function () {
+            var selectObj = $(this).closest('.bootstrap-select').find('select');
+            var selectOptions = selectObj.find('option');
+            var isAllSelected = selectOptions.length === selectObj.find('option:selected').length;
+
+            if (isAllSelected) {
+                setTimeout(function () {
+                    selectObj.selectpicker('deselectAll');
+                    selectObj.selectpicker('refresh');
+                }, 0);
+            } else {
+                setTimeout(function () {
+                    selectObj.selectpicker('selectAll');
+                    selectObj.selectpicker('refresh');
+                }, 0);
+            }
+        });
+
+        $(".bs-deselect-all").hide();
+
+        $('#filterForm select').on('change', function () {
+            $('#filterForm').submit();
+        });
+
+        $('#textDescription').on('keyup', function () {
+            $('#filterForm').submit();
+        });
+         
+        $('#filterForm').on('submit', function (e) {
+            e.preventDefault();
+            var formData = {
+                regionId: $('#regionSelect').val().map(Number),
+                municipioId: $('#municipioSelect').val().map(Number),
+                tipoDeProyectoId: $('#tipoDeProyectoSelect').val().map(Number),
+                faseId: $('#faseSelect').val().map(Number),
+                fondoId: $('#fondoSelect').val().map(Number),
+                descripcion: $('input[name="descripcion"]').val()
+            };
+            loadPoints('/Home/GetFilteredPoints', formData);
+        });
+
+    });
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 10, // Adjust the initial zoom level to fit Puerto Rico
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+
+        infoWindow = new google.maps.InfoWindow();
+        loadPoints('/Home/GetInitialPoints', {}); 
+    }
+
+
+    function loadPoints(url, data) {
+        $.ajax({
+            url: url,
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            success: function (response) {
+                var data = response.points;
+                Object.values(markers).forEach(function (marker) {
+                    marker.setMap(null);
+                });
+                markers = {};
+                rows = {};
+                if ($.fn.DataTable.isDataTable("#data")) {
+                    $('#data').DataTable().destroy();
+                }
+
+                $('#data tbody').empty();
+                var bounds = new google.maps.LatLngBounds(); 
+
+                data.forEach(function (point) {
+                    var color;
+                    switch (point.faseId) {
+                        case 1: color = 'blue'; break;
+                        case 2: color = 'purple'; break;
+                        case 3: color = 'darkblue'; break;
+                        case 4: color = 'orange'; break;
+                        case 5: color = 'red'; break;
+                        case 6: color = 'green'; break;
+                        default: color = 'black'; break;
+                    }
+                    var marker = new google.maps.Marker({
+                        position: { lat: point.latitude, lng: point.longitude },
+                        map: map,
+                        icon: {
+                            path: google.maps.SymbolPath.CIRCLE,
+                            scale: 4,
+                            fillColor: color,
+                            fillOpacity: 1,
+                            strokeColor: color,
+                            strokeOpacity: 1
+                        },
+                        title: point.descripcion
+                    });
+                    markers[point.id] = marker;
+                    marker.addListener('click', function () {
+                        highlightRow(point.id);
+                        showInfoWindow(point);
+                    });
+                    
+                    marker.addListener('mouseover', function () {
+                        showInfoWindow(point);
+                    });
+
+                    marker.addListener('mouseout', function () {
+                        infoWindow.close();
+                    });
+
+                    var formattedCost = parseFloat(point.cost).toLocaleString('en-US', {
+                        style: 'currency',
+                        currency: 'USD',
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    });
+                    point.formattedCost = formattedCost;
+                    var position = new google.maps.LatLng(point.latitude, point.longitude);
+                    bounds.extend(position); 
+
+                    var row = $('<tr></tr>').attr('id', point.id);
+
+                    row.append($('<td></td>').text(point.id));
+                    if (isValidURL(point.videoUrl)) {
+                        var videoLink = $('<a></a>').attr('href', point.videoUrl).attr('target', '_blank');
+                        videoLink.text('\u25B6'); 
+                        row.append($('<td></td>').append(videoLink));
+                    } else {
+                        row.append($('<td></td>').text(point.videoUrl));
+                    }
+                    row.append($('<td></td>').text(point.region));
+                    row.append($('<td></td>').text(point.municipio));
+                    row.append($('<td></td>').text(point.descripcion));
+                    row.append($('<td></td>').text(point.tipoDeProyecto));
+                    row.append($('<td></td>').text(point.fases));
+                    row.append($('<td></td>').text(point.fondos));
+                    row.append($('<td></td>').text(formattedCost));
+
+                    rows[point.id] = row; 
+                    row.on('click', function () {
+                        highlightRow(point.id);  
+                        highlightMarker(point.id);
+                        showInfoWindow(point);
+                    });
+                    $('#data').append(row);
+                });
+                map.fitBounds(bounds);
+                if (data.length === 1) {
+                    map.setCenter({ lat: data[0].latitude, lng: data[0].longitude });
+                    map.setZoom(10);
+                }
+                else if (data.length === 0) {
+                    map.setCenter({ lat: 18.2208, lng: -66.5901 });
+                    map.setZoom(9);
+                }
+               
+                $('#municipiosCount').text(response.municipiosCount);
+                $('#proyectosCount').text(response.proyectosCount);
+                $('#totalAmount').text('$' + response.totalAmount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+                $('#data').DataTable({
+                    pageLength: 10,
+                    dom: 'tip',  
+                    language: {
+                        info: "Mostrando _START_ a _END_ de _TOTAL_ entradas",
+                        infoEmpty: "Mostrando 0 a 0 de 0 entradas",
+                        paginate: {
+                            previous: "Anterior",
+                            next: "Siguiente"
+                        }
+                    }
+                });
+            }
+        });
+    }
+
+    function clearFilters() {
+        $('#regionSelect').selectpicker('deselectAll');
+        $('#municipioSelect').selectpicker('deselectAll');
+        $('#tipoDeProyectoSelect').selectpicker('deselectAll');
+        $('#faseSelect').selectpicker('deselectAll');
+        $('#fondoSelect').selectpicker('deselectAll');
+        $('#textDescription').val('');
+
+        $('#regionSelect').selectpicker('refresh');
+        $('#municipioSelect').selectpicker('refresh');
+        $('#tipoDeProyectoSelect').selectpicker('refresh');
+        $('#faseSelect').selectpicker('refresh');
+        $('#fondoSelect').selectpicker('refresh');
+
+        $('#filterForm').submit();
+    }
+
+    function highlightRow(id) {
+        $('tr').removeClass('highlight');
+        $('#' + id).addClass('highlight');
+        //$('#' + id)[0].scrollIntoView({ behavior: "smooth" });
+    }
+     
+    function highlightMarker(id) {
+        var marker = markers[id];
+        marker.setIcon({
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: 6,  
+            fillColor: marker.getIcon().fillColor,
+            fillOpacity: 1,
+            strokeColor: marker.getIcon().strokeColor,
+            strokeOpacity: 1
+        });
+        map.panTo(marker.getPosition());
+        map.setZoom(14);
+    }
+
+    function showInfoWindow(point) {
+         
+        var content = '<div>' +
+            '<table style="text-align:center;background-color: #add8e6;">' +
+            '<tr><td><strong>Región</strong></td><td style="background-color: white;"></td><td><strong>Municipio</strong></td></tr>' +
+            '<tr>' +
+            '<td style="background-color: white;"><strong>  ' + point.region + '</strong></td>' +
+            '<td style="background-color: white;"><strong>   </strong></td>' +
+            '<td style="background-color: white;"><strong>  ' + point.municipio + '</strong></td>' +
+            
+            '</tr>' +
+            '<tr><td><strong>Fase</strong></td><td style="background-color: white;"></td><td><strong>Fondo</strong></td></tr>' +
+            '<tr>' +
+            '<td style="background-color: white;"><strong>  ' + point.fases + '</strong></td>' +
+            '<td style="background-color: white;"><strong>   </strong></td>' +
+            '<td style="background-color: white;"><strong>  ' + point.fondos + '</strong></td>' +
+ '</tr>' +
+            '<tr><td><strong>Tipo de Proyecto</strong></td><td style="background-color: white;"></td><td><strong>Costo</strong></td></tr>' +
+            '<tr>' +
+            '<td style="background-color: white;"><strong>  ' + point.tipoDeProyecto + '</strong></td>' +
+            '<td style="background-color: white;"><strong>   </strong></td>' +
+            '<td style="background-color: white;"><strong>  ' + point.formattedCost + '</strong></td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td colspan="3"><strong>Descripción </strong> </td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td colspan="3" style="background-color: white;">' + point.descripcion + '</td>' +
+            
+            '</table>' +
+            '</div>';
+        var contentString = '<div>Information about the point...</div>';
+        infoWindow.setContent(content);
+        infoWindow.open(map, markers[point.id]);
+    }
+
+    function isValidURL(url) {
+        var pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
+            '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+            '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+            '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+            '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+            '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
+        return pattern.test(url);
+    }
+    //function showInfoWindow2(point) {
+
+    //    var content = '<div>' +
+    //        '<strong>ID: </strong>' + point.id + '<br />' +
+    //        '<strong>Region: </strong>' + point.region + '<br />' +
+    //        '<strong>Municipio: </strong>' + point.municipio + '<br />' +
+    //        '<strong>Descripcion: </strong>' + point.descripcion + '<br />' +
+    //        '<strong>Tipo de Proyecto: </strong>' + point.tipoDeProyecto + '<br />' +
+    //        '<strong>Fases: </strong>' + point.fases + '<br />' +
+    //        '<strong>Fondos: </strong>' + point.fondos + '<br />' +
+    //        '<strong>Costo: </strong>' + point.cost + '<br />' +
+    //        '</div>';
+
+    //    infoWindow.setContent(content);
+    //    infoWindow.open(map, markers[point.id]);
+    //}
+
+    window.onload = initMap;
+</script>
